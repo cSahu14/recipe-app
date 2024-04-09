@@ -23,22 +23,8 @@ function App() {
           <Route path='/' element={data.authUser ? <HomePage /> : <Navigate to='/SignIn' />} />
           <Route path='/signin' element={!data.authUser ? <SignIn /> : <Navigate to='/' />} />
           <Route path='/signup' element={!data.authUser ? <SignUp /> : <Navigate to='/' />} />
-          {/* <Route
-            path='/transaction/:id'
-            element={data.authUser ? <TransactionPage /> : <Navigate to='/login' />}
-          />
-          <Route path='*' element={<NotFoundPage />} /> */}
         </Routes>
-        {/* <Toaster /> */}
 		</>
-    // <Box>
-    //   <Navbar/>
-    //   <Stack direction="row" spacing={2} justifyContent="space-between">
-    //     <Sidebar/>
-    //     <Feed/>
-    //     <Rightbar/>
-    //   </Stack>
-    // </Box>
   );
 }
 
