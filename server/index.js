@@ -78,9 +78,9 @@ app.use(
   }),
 );
 
-app.use(express.static(path.join(__dirname, "frontend/dist")));
+app.use(express.static(path.join(__dirname, "client/build")));
 app.get("*", (req, res) => {
-	res.sendFile(path.join(__dirname, "frontend/dist", "index.html"));
+	res.sendFile(path.join(__dirname, "client/build", "index.html"));
 });
 // Modified server startup
 await new Promise((resolve) => httpServer.listen({ port: 4000 }, resolve));
