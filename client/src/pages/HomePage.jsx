@@ -11,7 +11,6 @@ import { useQuery } from '@apollo/client';
 const HomePage = () => {
     const { data, loading } = useQuery(GET_RECIPES)
 
-    console.log("card", data)
   return (
     <Box>
     {/* <Navbar/> */}

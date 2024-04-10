@@ -10,7 +10,6 @@ const Feed = ({recipes}) => {
     gap: "20px",
 
   }))
-  console.log("card", recipes)
   return (
     <UserBox bgcolor="pink" flex="6" p={2} >
       {recipes && 

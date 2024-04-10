@@ -7,13 +7,12 @@ const recipeResolver = {
 			try {
 				// if (!context.getUser()) throw new Error("Unauthorized");
 				// const userId = await context.getUser()._id;
-				// console.log("args", args)
-				const recipes = await Recipe.find().limit(5);
+				const recipes = await Recipe.find();
 				// const recipesCount = await Recipe.countDocuments();
 				return recipes;
 			} catch (err) {
-				console.error("Error getting transactions:", err);
-				throw new Error("Error getting transactions");
+				console.error("Error getting recipes:", err);
+				throw new Error("Error getting recipes");
 			}
 		},
 		recipe: async (_, { recipeId }) => {
@@ -21,8 +20,8 @@ const recipeResolver = {
 				const recipe = await Recipe.findById(recipeId);
 				return recipe;
 			} catch (err) {
-				console.error("Error getting transaction:", err);
-				throw new Error("Error getting transaction");
+				console.error("Error getting recipe:", err);
+				throw new Error("Error getting recipe");
 			}
 		},
     },

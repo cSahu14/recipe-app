@@ -10,3 +10,14 @@ export const GET_RECIPES = gql`
 		}
 	}
 `;
+
+export const GET_RECIPE = gql`
+	query GetRecipe($id: ID!) {
+		recipe(recipeId: $id) {
+			id
+			name
+			image
+			instructions
+		}
+	}
+`;

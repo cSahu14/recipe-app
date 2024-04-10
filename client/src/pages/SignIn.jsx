@@ -42,9 +42,7 @@ export default function SignIn() {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-        // console.log(loginData.email)
 		if (!loginData.email || !loginData.password) {
-            console.log("toast")
             return toast.error("Please fill in all fields");
         } 
 		try {
