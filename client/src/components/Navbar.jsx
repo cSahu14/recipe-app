@@ -5,6 +5,7 @@ import React, { useState } from 'react'
 import { useMutation, useQuery } from "@apollo/client";
 import { LOGOUT } from "../graphql/mutations/user.mutation";
 import { GET_AUTHENTICATED_USER } from "../graphql/queries/user.query";
+import { Link } from 'react-router-dom';
 
 const StyledToolbar = styled(Toolbar)({
     display: "flex",
@@ -17,12 +18,9 @@ const StyledToolbar = styled(Toolbar)({
     width: "40%"
   }))
   const Icons = styled(Box)(({theme}) => ({
-    display: "none",
+    display: "flex",
     alignItems: "center",
     gap: "20px",
-    [theme.breakpoints.up("sm")]: {
-        display: "flex"
-    }
   }))
 
   const UserBox = styled(Box)(({theme}) => ({
@@ -55,9 +53,11 @@ const Navbar = () => {
   return (
     <AppBar position='sticky'>
         <StyledToolbar >
-            <Typography variant='6' sx={{display: {xs: "none", sm: "block"}}}>
-                RECIPE
-            </Typography>
+            <Link to="/">
+              <Typography variant='6' component="p" sx={{display: {xs: "none", sm: "block"}}}>
+                  RECIPE
+              </Typography>
+            </Link>
             <LunchDining sx={{display: {xs: "block", sm: "none"}}}/>
             <Search><InputBase placeholder='Search..'/></Search>
             <Icons>
